@@ -1,0 +1,219 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefabs/ChainSaw.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprits/images.png" type="Texture" id=4]
+[ext_resource path="res://Sprits/Free/Background/TileMap.tres" type="TileSet" id=8]
+[ext_resource path="res://Script/Reset_Level.gd" type="Script" id=9]
+[ext_resource path="res://Prefabs/Transition_in.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Items/banana.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Prefabs/Transition_out.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Items/apple.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Prefabs/FallingPlataform.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Prefabs/MovingPlatform.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/HUD.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Script/fall-zone.gd" type="Script" id=19]
+[ext_resource path="res://Prefabs/break-box.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Items/apple_rig.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Items/banana_rig.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Prefabs/Portal_goal.tscn" type="PackedScene" id=23]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 10, 156.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 169, 10 )
+
+[node name="Level_03" type="Node2D"]
+position = Vector2( 0, -1 )
+script = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -820.498, -232.811 )
+scale = Vector2( 0.898001, 2.08723 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 1659.5, -232.811 )
+scale = Vector2( 1.078, 2.08723 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 478.5, -649.811 )
+scale = Vector2( 4.514, 0.419237 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 452, 183.5 )
+scale = Vector2( 4.514, 0.422 )
+texture = ExtResource( 4 )
+
+[node name="FallingPlataforms" type="Node2D" parent="."]
+
+[node name="FallingPlataform" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 346, -224 )
+
+[node name="FallingPlataform2" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 430, -224 )
+
+[node name="FallingPlataform3" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 519, -224 )
+
+[node name="FallingPlataform4" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 470, -134 )
+
+[node name="FallingPlataform5" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 387, -134 )
+
+[node name="FallingPlataform6" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 334, -48 )
+
+[node name="FallingPlataform7" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 430, -47 )
+
+[node name="FallingPlataform8" parent="FallingPlataforms" instance=ExtResource( 14 )]
+position = Vector2( 519, -47 )
+
+[node name="MovingPlatform" parent="FallingPlataforms" instance=ExtResource( 15 )]
+position = Vector2( 189, -2 )
+horizontal = false
+
+[node name="MovingPlatform2" parent="FallingPlataforms" instance=ExtResource( 15 )]
+position = Vector2( -278, -25 )
+horizontal = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 46, 46 )
+cell_tile_origin = 1
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -720909, 29, 0, -720908, 29, 0, -720907, 29, 0, -720906, 29, 0, -720905, 29, 0, -720904, 29, 0, -720903, 29, 0, -720902, 29, 0, -720901, 29, 0, -720900, 29, 0, -720899, 29, 0, -720898, 29, 0, -720897, 29, 0, -786432, 28, 0, -786431, 29, 0, -786430, 29, 0, -786429, 29, 0, -786428, 29, 0, -786427, 29, 0, -786426, 29, 0, -786425, 29, 0, -786424, 29, 0, -786423, 29, 0, -786422, 29, 0, -786421, 29, 0, -786420, 29, 0, -786419, 29, 0, -786418, 29, 0, -786417, 29, 0, -786416, 29, 0, -786415, 29, 0, -786414, 29, 0, -786413, 29, 0, -786412, 29, 0, -786411, 29, 0, -786410, 29, 0, -786409, 29, 0, -786408, 29, 0, -786407, 29, 0, -786406, 29, 0, -786405, 29, 0, -786404, 29, 0, -786403, 29, 0, -786402, 13, 0, -720896, 28, 0, -720866, 13, 0, -655360, 28, 0, -655330, 13, 0, -589824, 28, 0, -589794, 13, 0, -524288, 28, 0, -524258, 13, 0, -393229, 3, 0, -393228, 3, 0, -393227, 3, 0, -393226, 3, 0, -393225, 3, 0, -393220, 3, 0, -393219, 3, 0, -393218, 3, 0, -393217, 3, 0, -458752, 28, 0, -458722, 13, 0, -327693, 29, 0, -327692, 29, 0, -327691, 29, 0, -327690, 29, 0, -327689, 29, 0, -327684, 29, 0, -327683, 29, 0, -327682, 29, 0, -327681, 29, 0, -393216, 29, 0, -393186, 13, 0, -327675, 3, 0, -327667, 3, 0, -327666, 3, 0, -327665, 3, 0, -327664, 3, 0, -327663, 3, 0, -327662, 3, 0, -327661, 3, 0, -327660, 3, 0, -327659, 3, 0, -327658, 3, 0, -327657, 3, 0, -327656, 3, 0, -327655, 3, 0, -327654, 3, 0, -327650, 13, 0, -262139, 28, 0, -262131, 28, 0, -262130, 29, 0, -262129, 29, 0, -262128, 29, 0, -262127, 29, 0, -262126, 29, 0, -262125, 29, 0, -262124, 29, 0, -262123, 29, 0, -262122, 29, 0, -262121, 29, 0, -262120, 29, 0, -262119, 29, 0, -262118, 29, 0, -262114, 13, 0, -131085, 3, 0, -131084, 3, 0, -131083, 3, 0, -131082, 3, 0, -131081, 3, 0, -131080, 3, 0, -131077, 3, 0, -131076, 3, 0, -131075, 3, 0, -131074, 3, 0, -131073, 3, 0, -196603, 28, 0, -196595, 28, 0, -196578, 13, 0, -65549, 29, 0, -65548, 29, 0, -65547, 29, 0, -65546, 29, 0, -65545, 29, 0, -65544, 29, 0, -65541, 29, 0, -65540, 29, 0, -65539, 29, 0, -65538, 29, 0, -65537, 29, 0, -131067, 28, 0, -131059, 28, 0, -131055, 3, 0, -131054, 3, 0, -131053, 3, 0, -131052, 3, 0, -131051, 3, 0, -131050, 3, 0, -131049, 3, 0, -131048, 3, 0, -131047, 3, 0, -131046, 3, 0, -131045, 3, 0, -131044, 3, 0, -131043, 3, 0, -131042, 13, 0, -65531, 28, 0, -65523, 28, 0, -65519, 29, 0, -65518, 29, 0, -65517, 29, 0, -65516, 29, 0, -65515, 29, 0, -65514, 29, 0, -65513, 29, 0, -65512, 29, 0, -65511, 29, 0, -65510, 29, 0, -65509, 29, 0, -65508, 29, 0, -65507, 29, 0, -65506, 13, 0, 5, 28, 0, 13, 28, 0, 30, 13, 0, 131059, 3, 0, 131060, 3, 0, 131061, 3, 0, 131062, 3, 0, 131063, 3, 0, 131064, 3, 0, 131065, 3, 0, 131066, 3, 0, 131067, 3, 0, 131068, 3, 0, 131069, 3, 0, 131070, 3, 0, 131071, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 28, 0, 65549, 28, 0, 65550, 3, 0, 65551, 3, 0, 65552, 3, 0, 65553, 3, 0, 65554, 3, 0, 65555, 3, 0, 65556, 3, 0, 65557, 3, 0, 65558, 3, 0, 65559, 3, 0, 65560, 3, 0, 65561, 3, 0, 65562, 3, 0, 65563, 3, 0, 65564, 3, 0, 65565, 3, 0, 65566, 13, 0, 196595, 29, 0, 196596, 29, 0, 196597, 29, 0, 196598, 29, 0, 196599, 29, 0, 196600, 29, 0, 196601, 29, 0, 196602, 29, 0, 196603, 29, 0, 196604, 29, 0, 196605, 29, 0, 196606, 29, 0, 196607, 29, 0, 131072, 29, 0, 131073, 29, 0, 131074, 29, 0, 131075, 29, 0, 131076, 29, 0, 131077, 29, 0, 131085, 29, 0, 131086, 29, 0, 131087, 29, 0, 131088, 29, 0, 131089, 29, 0, 131090, 29, 0, 131091, 29, 0, 131092, 29, 0, 131093, 29, 0, 131094, 29, 0, 131095, 29, 0, 131096, 29, 0, 131097, 29, 0, 131098, 29, 0, 131099, 29, 0, 131100, 29, 0, 131101, 29, 0, 131102, 20, 0 )
+
+[node name="ChainSaw" parent="." instance=ExtResource( 2 )]
+position = Vector2( 711, -176 )
+rotation = 1.57079
+scale = Vector2( 1.80158, 1.80158 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -505, -443 )
+
+[node name="WallStop" type="StaticBody2D" parent="."]
+position = Vector2( -490, 0 )
+scale = Vector2( 2, 2 )
+collision_layer = 8
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallStop"]
+position = Vector2( -42, -118.5 )
+shape = SubResource( 8 )
+
+[node name="fall-zone" type="Area2D" parent="."]
+position = Vector2( 443, 142 )
+collision_layer = 32
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="collision" type="CollisionShape2D" parent="fall-zone"]
+position = Vector2( -7, -21 )
+shape = SubResource( 12 )
+
+[node name="frults" type="Node2D" parent="."]
+
+[node name="apple9" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( -525, -175 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple10" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( -26, -354 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple11" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( -523, 8 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple12" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( -474, 10 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple13" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 189, -50 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple14" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 191, -105 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple15" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 190, -157 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple16" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 191, -211 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple17" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 334, -85 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple18" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 428, -87 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple19" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 518, -86 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple20" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 470, -170 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="apple21" parent="frults" instance=ExtResource( 13 )]
+position = Vector2( 387, -169 )
+scale = Vector2( 1.36961, 1.36961 )
+
+[node name="banana" parent="frults" instance=ExtResource( 11 )]
+position = Vector2( 1214, -254 )
+
+[node name="banana2" parent="frults" instance=ExtResource( 11 )]
+position = Vector2( 806, -115 )
+
+[node name="banana3" parent="frults" instance=ExtResource( 11 )]
+position = Vector2( 1170, 20 )
+
+[node name="HUD" parent="." instance=ExtResource( 17 )]
+
+[node name="Transition_in" parent="." instance=ExtResource( 10 )]
+
+[node name="Transition_out" parent="." instance=ExtResource( 12 )]
+
+[node name="break-box" parent="." instance=ExtResource( 20 )]
+position = Vector2( 739, -322 )
+fruit_intance = [ ExtResource( 21 ), ExtResource( 22 ) ]
+fruits = 2
+
+[node name="break-box2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 805, -322 )
+fruit_intance = [ ExtResource( 21 ), ExtResource( 22 ) ]
+fruits = 1
+
+[node name="break-box3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 873, -322 )
+fruit_intance = [ ExtResource( 21 ), ExtResource( 22 ) ]
+fruits = 4
+
+[node name="break-box4" parent="." instance=ExtResource( 20 )]
+position = Vector2( 945, -322 )
+fruit_intance = [ ExtResource( 21 ), ExtResource( 22 ) ]
+fruits = 2
+
+[node name="Portal_goal" parent="." instance=ExtResource( 23 )]
+position = Vector2( 1307, 0 )
+path = "res://Levels/Level_04.tscn"
+
+[connection signal="body_entered" from="fall-zone" to="fall-zone" method="_on_fallzone_body_entered"]

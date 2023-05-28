@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprits/Icon.png" type="Texture" id=1]
+[ext_resource path="res://Sprits/Fonts/DePixelBreit.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Script/Score.gd" type="Script" id=3]
+[ext_resource path="res://Sprits/clock.png" type="Texture" id=4]
+[ext_resource path="res://Script/TimerCounter.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -514.0
+
+[node name="Holder" type="Control" parent="HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Holder"]
+margin_left = 72.0
+margin_top = 16.0
+margin_right = 142.0
+margin_bottom = 86.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="score" type="Label" parent="HBoxContainer/Holder"]
+margin_left = 176.0
+margin_top = 30.0
+margin_right = 262.0
+margin_bottom = 78.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00"
+align = 2
+valign = 1
+script = ExtResource( 3 )
+
+[node name="Holder2" type="Control" parent="HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+script = ExtResource( 5 )
+minutes = 1
+seconds = 20
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Holder2"]
+margin_left = 375.0
+margin_top = 25.0
+margin_right = 431.0
+margin_bottom = 81.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="minutes" type="Label" parent="HBoxContainer/Holder2"]
+margin_left = 198.0
+margin_top = 32.0
+margin_right = 254.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00"
+valign = 1
+
+[node name="seconds" type="Label" parent="HBoxContainer/Holder2"]
+margin_left = 268.0
+margin_top = 30.0
+margin_right = 326.0
+margin_bottom = 78.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00"
+valign = 1
+
+[node name="Timer" type="Timer" parent="HBoxContainer/Holder2"]
+autostart = true
+
+[connection signal="timeout" from="HBoxContainer/Holder2/Timer" to="HBoxContainer/Holder2" method="_on_Timer_timeout"]

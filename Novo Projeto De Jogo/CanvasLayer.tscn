@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://159605.png" type="Texture" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Direita" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.341176 )
+position = Vector2( 332, 549.4 )
+rotation = 3.14159
+scale = Vector2( 0.2, 0.2 )
+normal = ExtResource( 1 )
+action = "direita"
+
+[node name="Esquerda" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.341176 )
+position = Vector2( 81, 447.4 )
+scale = Vector2( 0.2, 0.2 )
+normal = ExtResource( 1 )
+action = "esquerda"
+
+[node name="Pulo" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.341176 )
+position = Vector2( 969, 442 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+normal = ExtResource( 1 )
+action = "pulo"

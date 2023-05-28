@@ -1,0 +1,228 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprits/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" type="Texture" id=2]
+[ext_resource path="res://Sprits/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" type="Texture" id=3]
+[ext_resource path="res://viking2.png" type="Texture" id=4]
+[ext_resource path="res://Sprits/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" type="Texture" id=5]
+[ext_resource path="res://Sprits/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" type="Texture" id=6]
+[ext_resource path="res://Sprits/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" type="Texture" id=7]
+[ext_resource path="res://CanvasLayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sons/Efeitos Sonoros/jump1.ogg" type="AudioStream" id=9]
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 7.771
+height = 0.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fall"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 18, 19, 20 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Run"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 12, 13 ]
+}
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+uniform vec2 Direction = vec2(1.0,0.0);
+uniform float Speed = 0.02f;
+
+void fragment(){
+	COLOR = texture(TEXTURE, UV + (Direction*TIME*Speed));
+}"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
+shader_param/Direction = Vector2( 1, 0 )
+shader_param/Speed = 0.02
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 6.10578, 1.38767 )
+
+[node name="Player" type="KinematicBody2D"]
+light_mask = 2
+position = Vector2( -501, -445 )
+scale = Vector2( 1.80158, 1.80158 )
+collision_mask = 62
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+hframes = 9
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.66521, 8.88113 )
+shape = SubResource( 13 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -600
+limit_top = -570
+limit_right = 1400
+limit_bottom = 130
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 0.0
+drag_margin_right = 0.1
+drag_margin_bottom = 0.5
+editor_draw_limits = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fall = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+anims/Jump = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+anims/Run = SubResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -594, -494 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/sky"]
+position = Vector2( 0, -56 )
+scale = Vector2( 3.05343, 2.90188 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="clauds" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -594, -494 )
+motion_mirroring = Vector2( 576, 208 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/clauds"]
+material = SubResource( 11 )
+position = Vector2( 0, -56 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="claud-montain" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -594, -494 )
+motion_scale = Vector2( 0.4, 0.8 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/claud-montain"]
+position = Vector2( 0, 157 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="mountain-trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -594, -494 )
+motion_scale = Vector2( 0.7, 1 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/mountain-trees"]
+position = Vector2( 0, 157 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -594, -494 )
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -159 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, 157 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
+
+[node name="headCollider" type="Area2D" parent="."]
+collision_mask = 32
+
+[node name="collision" type="CollisionShape2D" parent="headCollider"]
+position = Vector2( 2.22028, -1.38763 )
+shape = SubResource( 14 )
+
+[node name="jump_fx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = -20.0
+pitch_scale = 2.0
+
+[connection signal="body_entered" from="headCollider" to="." method="_on_headCollider_body_entered"]
