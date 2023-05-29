@@ -1,5 +1,5 @@
 # Fruits Run
-![FruitsRun](./assets/FruitsRun.png)
+[FruitsRun]([./assets/FruitsRun.png](https://photos.google.com/u/1/share/AF1QipMXZReHW2us7h-qNFsXFL4VGPD-OJuvd1dEJvE3bnKmwzK0C_Q4WM3lTL94HQCdHA/photo/AF1QipNCOsplMqtpXdx6Uc1IAQ26h9BlngrvGOTUJsDe?key=VC04bGlURUJpanJTV1dCOGpYT2JYY2owV0xjSkZ3))
 
 This is a project for a 2D platform game, with the aim of using the cell phone's accelerometer and being able to save the score made in the game in a database.
 
@@ -22,11 +22,11 @@ This is a project for a 2D platform game, with the aim of using the cell phone's
 
 ## Layout
 ### Home Screen
-![tela inicial](./assets/telainicial.png)
+[tela inicial]([./assets/telainicial.png](https://photos.google.com/u/1/share/AF1QipMXZReHW2us7h-qNFsXFL4VGPD-OJuvd1dEJvE3bnKmwzK0C_Q4WM3lTL94HQCdHA/photo/AF1QipNsmrnokJdZ5r7MD1cP9cHwbvVfzF_wDyvTQK3B?key=VC04bGlURUJpanJTV1dCOGpYT2JYY2owV0xjSkZ3))
 ### In-game Screen
-![tela em game](./assets/telaingame.png)
+[tela em game]([./assets/telaingame.png](https://photos.google.com/u/1/share/AF1QipMXZReHW2us7h-qNFsXFL4VGPD-OJuvd1dEJvE3bnKmwzK0C_Q4WM3lTL94HQCdHA/photo/AF1QipOgbuYZqY1q-2TdNKBVuWsQfjXlB8MY95zMCcXs?key=VC04bGlURUJpanJTV1dCOGpYT2JYY2owV0xjSkZ3))
 ### Screen to Save
-![tela de save](./assets/teladesave.png)
+[tela de save]([./assets/teladesave.png](https://photos.google.com/u/1/share/AF1QipMXZReHW2us7h-qNFsXFL4VGPD-OJuvd1dEJvE3bnKmwzK0C_Q4WM3lTL94HQCdHA/photo/AF1QipPIp_eIVwt16m3jU8CXBjLud1aLs0MRDQPJbmvH?key=VC04bGlURUJpanJTV1dCOGpYT2JYY2owV0xjSkZ3))
 
 ## Demonstration
 [Demo Link](https://reinody.itch.io/fruitsrun)
