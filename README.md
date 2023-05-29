@@ -1,5 +1,5 @@
 # Fruits Run
-<img src="https://photos.google.com/u/1/share/AF1QipMXZReHW2us7h-qNFsXFL4VGPD-OJuvd1dEJvE3bnKmwzK0C_Q4WM3lTL94HQCdHA/photo/AF1QipNCOsplMqtpXdx6Uc1IAQ26h9BlngrvGOTUJsDe?key=VC04bGlURUJpanJTV1dCOGpYT2JYY2owV0xjSkZ3"/>
+<img src="https://i.im.ge/2023/05/29/h9DLDG.FruitsRun.png"/>
 
 This is a project for a 2D platform game, with the aim of using the cell phone's accelerometer and being able to save the score made in the game in a database.
 
