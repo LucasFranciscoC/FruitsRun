@@ -15,9 +15,9 @@ This is a project for a 2D platform game, with the aim of using the cell phone's
 
 ## 📱Project Features
 
-- [x]Puzzle
-- [x]Saved in a Database
-- [x]Use of Accelerometer
+- [x] Puzzle
+- [x] Saved in a Database
+- [x] Use of Accelerometer
 
 ## Layout
 Home Screen
