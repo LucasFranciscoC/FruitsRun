@@ -22,10 +22,15 @@ This is a project for a 2D platform game, with the aim of using the cell phone's
 ## Layout
 Home Screen
 <img src="https://i.im.ge/2023/05/29/h9LRv1.telainicial.png"/>
+
 In-game Screen
 <img src="https://i.im.ge/2023/05/29/h9IfYK.telaingame.png"/>
+
 Screen to Save
 <img src="https://i.im.ge/2023/05/29/h9ICUc.teladesave.png"/>
+
+Use of accelerometer
+<img src="https://i.im.ge/2023/05/31/hNhZxY.acelerometro.png"/>
 
 ## Demonstration
 [Demo Link](https://reinody.itch.io/fruitsrun)
