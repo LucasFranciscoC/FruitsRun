@@ -6,12 +6,12 @@ This is a project for a 2D platform game, with the aim of using the cell phone's
 > Status: Developing ⚠️
 
 ## Index
-- <a href="#funcionalidades">Project Features</a>
+- <a href="#Project Features">Project Features</a>
 - <a href="#layout">Layout</a>
-- <a href="#demonstracao">Demonstration</a>
-- <a href="#rodar">How to run this project?</a>
-- <a href="#tecnologias">Technologies used</a>
-- <a href="#autor">Author</a>
+- <a href="#Demonstration">Demonstration</a>
+- <a href="#How to run this project?">How to run this project?</a>
+- <a href="#Technologies used">Technologies used</a>
+- <a href="#Author">Author</a>
 
 ## 📱Project Features
 
