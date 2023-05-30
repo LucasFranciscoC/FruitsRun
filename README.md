@@ -13,7 +13,7 @@ This is a project for a 2D platform game, with the aim of using the cell phone's
 - <a href="#Technologies used">Technologies used</a>
 - <a href="#Author">Author</a>
 
-## 📱Project Features
+## Project Features
 
 - [x] Puzzle
 - [x] Saved in a Database
