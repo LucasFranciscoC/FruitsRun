@@ -37,7 +37,7 @@ Use of accelerometer
 
 ## How to run this project?
 If you use the mobile version, download it from:
-[Link mobile](https://www.4shared.com/s/f97FMX3w2fa)
+[Link mobile](https://www.4shared.com/s/fLXjApHXnge)
 
 If you use the computer version, download it from:
 [Link desktop](https://www.4shared.com/s/fb1R48UEPjq)
