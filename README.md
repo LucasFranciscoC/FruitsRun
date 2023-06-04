@@ -27,7 +27,7 @@ In-game Screen
 <img src="https://i.im.ge/2023/05/29/h9IfYK.telaingame.png"/>
 
 Screen to Save
-<img src="https://i.im.ge/2023/06/01/htvdOx.teladesave.png"/>
+<img src="https://i.im.ge/2023/06/05/hgitwp.teladesave1.png"/>
 
 Use of accelerometer
 <img src="https://i.im.ge/2023/05/31/hNhZxY.acelerometro.png"/>
