@@ -7,6 +7,7 @@ var name_listSize = 0
 
 func _ready():
 	get_score()
+	$ColorRect/RichTextLabel.text = " Seu Score: "+str(Global.fruits)
 	pass
 
 func _on_LineEdit_text_changed(new_text):
@@ -46,3 +47,4 @@ func _on_HTTP_get_request_completed(result, response_code, headers, body):
 
 func _on_Timer_timeout():
 	get_tree().quit()
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprits/Free/Menu/Buttons/Play.png" type="Texture" id=1]
 [ext_resource path="res://Sprits/Fonts/DePixelBreit.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,14 @@
 [sub_resource type="DynamicFont" id=1]
 size = 23
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 21
+extra_spacing_top = 13
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.172549, 0.164706, 0.196078, 1 )
 
 [node name="Save_score" type="Control"]
 script = ExtResource( 5 )
@@ -24,7 +32,7 @@ margin_top = 176.0
 margin_right = 738.0
 margin_bottom = 256.0
 custom_fonts/font = SubResource( 1 )
-text = "Insert Yout Name Here"
+text = "Insert Your Name Here"
 align = 1
 
 [node name="start" type="TouchScreenButton" parent="."]
@@ -39,6 +47,22 @@ tile_data = PoolIntArray( -1114136, 4, 0, -1114135, 4, 0, -1114134, 4, 0, -11141
 stream = ExtResource( 6 )
 volume_db = -20.0
 autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 381.0
+margin_top = 83.0
+margin_right = 614.0
+margin_bottom = 147.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+anchor_bottom = 0.627
+margin_left = 18.0
+margin_top = 1.0
+margin_right = 228.0
+margin_bottom = 8.872
+custom_fonts/normal_font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 
 [connection signal="request_completed" from="HTTP_get" to="." method="_on_HTTP_get_request_completed"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]

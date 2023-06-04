@@ -1,6 +1,6 @@
 extends Node
 
-var fruits = 30
+var fruits = 0
 
 
 var player_name = "Lucas"

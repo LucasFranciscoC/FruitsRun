@@ -32,9 +32,9 @@ func _on_HTTP_get_request_completed(result, response_code, headers, body):
 	var size = len(dict)
 	for i in range(size):
 		var page = dict[i]
-		score_text += "Player: "+page["name"]+" Score: "+str(page["score"])+"\n"
+		score_text += "\n"+"                                          Player: "+page["name"]+" Score: "+str(page["score"])+"\n"
 		$score.text = score_text
 
 
 func _on_Timer_timeout():
-	get_tree().quit()
+	get_tree().change_scene("res://Scene/startScreen.tscn")
