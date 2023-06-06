@@ -3,7 +3,7 @@
 
 This is a project for a 2D platform game, with the aim of using the cell phone's accelerometer and being able to save the score made in the game in a database.
 
-> Status: Developing ⚠️ _E
+> Status: Developing ⚠️
 
 ## Index
 - <a href="#Project Features">Project Features</a>
@@ -50,4 +50,4 @@ If you use the computer version, download it from:
 
 ## Author
 
-- Linkedin: [Lucas Francisco](https://www.linkedin.com/in/lucas-francisco-chacon/)
+- Linkedin: [Lucas Francisco RA: 12822116852](https://www.linkedin.com/in/lucas-francisco-chacon/)
